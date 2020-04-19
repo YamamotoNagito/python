@@ -6,7 +6,7 @@ from requests import request as rq
 from selenium.webdriver import Chrome, ChromeOptions
 from random import randint
 import datetime
-import schedule
+#import schedule
 import pandas as pd
 import tweepy
 
