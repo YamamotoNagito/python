@@ -49,9 +49,11 @@ class AutoTweet:
             print("This tweet is too long")
         else:
             try:
+                print('a')
                 elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div/div[3]/a/div')
                 elem.click()
                 time.sleep(5)
+                print('a')
                 elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div')
                 elem.click()
                 time.sleep(5)
@@ -168,6 +170,7 @@ if __name__ == '__main__':
             tmp = tweet1.tweetChoice()
             print(tmp)
             time.sleep(5)
+            print('a')
             tweet1.tweet(tmp)
             #tweet1.tweet(date2)
             #tweet1.tweet(date2)
