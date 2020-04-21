@@ -13,11 +13,11 @@ import tweepy
 
 class AutoTweet:
     # herokuのchromedriverのPATHを指定
-    driver_path = '/app/.chromedriver/bin/chromedriver'
+    #driver_path = '/app/.chromedriver/bin/chromedriver'
     options = ChromeOptions()
     options.add_argument('-headless')
     def __init__(self,yourId,yourPassWord,filename):
-        self.driver = webdriver.Chrome(opitons=options,executable_path=driver_path)
+        self.driver = webdriver.Chrome(executable_path='/app/.chromedriver/bin/chromedriver')
         self.yourId = yourId
         self.yourPassWord = yourPassWord
         self.df = pd.read_csv(filename)
@@ -49,21 +49,20 @@ class AutoTweet:
             print("This tweet is too long")
         else:
             try:
-                elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div/header/div/div/div/div/div[3]/a/div')
+                elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div/div[3]/a/div')
                 elem.click()
-                print(tmp)
                 time.sleep(5)
-                elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div/div/div/div/div[2]/div[2]/div/div[3]/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div[1]/div[1]/div/div/div/div[2]/div')
+                elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div')
                 elem.click()
-                print(tmp)
                 time.sleep(5)
+                print(tmp)
                 print("before send key")
                 time.sleep(5)
                 elem.send_keys(twi)
                 time.sleep(5)
                 print("input_done")
                 time.sleep(5)
-                elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div/div/div/div/div[2]/div[2]/div/div[3]/div/div/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/span/span')
+                elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/span/span')
                 elem.click()
                 print("OK")
                 elem.send_keys(Keys.CONTROL, Keys.ENTER)
