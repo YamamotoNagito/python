@@ -12,10 +12,12 @@ import tweepy
 
 
 class AutoTweet:
+    # herokuのchromedriverのPATHを指定
+    #driver_path = '/app/.chromedriver/bin/chromedriver'
     options = ChromeOptions()
     options.add_argument('-headless')
     def __init__(self,yourId,yourPassWord,filename):
-        self.driver = webdriver.Chrome(executable_path=rf'C:\Users\nagito\Desktop\大学の授業関連\python\chromedriver')
+        self.driver = webdriver.Chrome(executable_path='/app/.chromedriver/bin/chromedriver')
         self.yourId = yourId
         self.yourPassWord = yourPassWord
         self.df = pd.read_csv(filename)
@@ -47,20 +49,23 @@ class AutoTweet:
             print("This tweet is too long")
         else:
             try:
+                """
                 mail=self.driver.find_element_by_xpath('//*[@id="challenge_response"]')
                 print('mailの認証')
                 val=input()
                 sleep(5)
                 mail.send_keys(val)
                 mail.send_keys(Keys.ENTER)
+                """
                 #mail=self.driver.find_element_by_xpath=('//*[@id="email_challenge_submit"]')
                 #mail.click()
                 sleep(5)
                 print('a')
-                
+
                 elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div/div[3]/a/div')
                 elem.click()
                 time.sleep(5)
+                print('a')
                 elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div')
                 elem.click()
                 time.sleep(5)
@@ -176,14 +181,14 @@ if __name__ == '__main__':
         try:
             tmp = tweet1.tweetChoice()
             print(tmp)
-            print('a')
             time.sleep(5)
+            print('a')
             tweet1.tweet(tmp)
             #tweet1.tweet(date2)
             #tweet1.tweet(date2)
             
-            #本来はtime.sleepするがsys.exit()する
-            time.sleep(60*30)
+            #本来はtime.sleepするがsys.out
+            #time.sleep(60*30)
             sys.exit()
             tweet1.driver.refresh()
             """tweet1.autoIINE()"""
