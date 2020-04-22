@@ -183,7 +183,10 @@ if __name__ == '__main__':
             tweet1.tweet(tmp)
             #tweet1.tweet(date2)
             #tweet1.tweet(date2)
-            time.sleep(60*30)
+            
+            #本来はtime.sleepするがsys.exit()する
+            #time.sleep(60*30)
+            sys.exit()
             tweet1.driver.refresh()
             """tweet1.autoIINE()"""
             """
