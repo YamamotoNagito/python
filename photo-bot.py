@@ -47,16 +47,19 @@ class AutoTweet:
             print("This tweet is too long")
         else:
             try:
-                    mail=self.driver.find_element_by_xpath('//*[@id="challenge_response"]')
-                    print('mailの認証')
-                    val=input()
-                    sleep(5)
-                    mail.send_keys(val)
-                    mail.send_keys(Keys.ENTER)
+                """
+                mail=self.driver.find_element_by_xpath('//*[@id="challenge_response"]')
+                print('mailの認証')
+                val=input()
+                sleep(5)
+                mail.send_keys(val)
+                mail.send_keys(Keys.ENTER)
+                """
                 #mail=self.driver.find_element_by_xpath=('//*[@id="email_challenge_submit"]')
                 #mail.click()
                 sleep(5)
                 print('a')
+                
                 elem = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div/div[3]/a/div')
                 elem.click()
                 time.sleep(5)
