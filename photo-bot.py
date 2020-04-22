@@ -188,8 +188,8 @@ if __name__ == '__main__':
             #tweet1.tweet(date2)
             
             #本来はtime.sleepするがsys.out
-            #time.sleep(60*30)
-            sys.exit()
+            time.sleep(60*30)
+            #sys.exit()
             tweet1.driver.refresh()
             """tweet1.autoIINE()"""
             """
