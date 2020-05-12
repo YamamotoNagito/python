@@ -1,7 +1,7 @@
 beautifulsoup4==4.8.2
 certifi==2019.11.28
 chardet==3.0.4
-chromedriver-binary==76.0.3809.68.0
+chromedriver-binary==80.0.3987.106
 idna==2.8
 numpy==1.17.4
 oauthlib==3.1.0
