@@ -164,11 +164,8 @@ class AutoTweet:
         self.driver.quit()
 
 if __name__ == '__main__':
-    """
-    tweet1 = AutoTweet("Oithu1Oiu543beu","banagid263","tweet.csv")
-    """
-    tweet1 = AutoTweet("@mogurayui_0815","kokurayui08gazou15","tweet.csv")
-    #tweet1 = AutoTweet("sakurasou_petto","kimetusuki","tweet.csv")
+    
+    tweet1 = AutoTweet("","","tweet.csv")
     tweet1.Login()
     time.sleep(10)
     """
